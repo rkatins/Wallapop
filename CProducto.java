@@ -9,20 +9,18 @@ public class CProducto {
 	public CProducto(String isNombre, double diPrecio) {
 		sNombre = isNombre;
 		dPrecio = diPrecio;
-		dPrecioFinal = calcularPrecioFinal();
+		calcularPrecioFinal();
 		iIVA = 20;
 	} //mConstructor
 
 	@Override
 	public String toString() {
-		return "CProducto [Nombre=" + sNombre + "\n" + ", Precio=" + dPrecio + "€ \n" + ", PrecioFinal=" + dPrecioFinal + "€ \n" + ", IVA=" + iIVA + "]";
+		return "CProducto [Nombre=" + sNombre + "\n" + ", Precio=" + dPrecio + "ï¿½ \n" + ", PrecioFinal=" + dPrecioFinal + "ï¿½ \n" + ", IVA=" + iIVA + "]";
 	} //toString()
 
-	public double calcularPrecioFinal() {
-		return dPrecio + ((iIVA/100) * dPrecio);
+	public void calcularPrecioFinal() {
+		this.dPrecioFinal = dPrecio + ((iIVA/100) * dPrecio);
 	} //calcularPrecioFinal()
 
-	public double getdPrecioFinal() {
-		return dPrecioFinal;
-	}	
+		
 }

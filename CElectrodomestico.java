@@ -14,7 +14,7 @@ public class CElectrodomestico extends CProducto {
 								+ "PesoKg=" + PesoKg + "]";
 	} //toString()
 	
-	public double calcularPrecioFinal() {
-		return (this.dPrecio + ((this.iIVA/100) * this.dPrecio)) + PesoKg;
+	public void calcularPrecioFinal() {
+		 this.dPrecio += (this.iIVA/100) * this.dPrecio + PesoKg;
 	} //calcularPrecioFinal()
 }

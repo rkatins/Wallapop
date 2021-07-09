@@ -5,6 +5,7 @@ import java.time.LocalDate;
 public class CRopa extends CProducto {
 	int iTalla;
 	//int iDiaDelMes = LocalDate.getDayOfMonth();
+        
 
 	public CRopa(String isNombre, double diPrecio, int iiTalla) {
 		super(isNombre, diPrecio);
@@ -17,12 +18,13 @@ public class CRopa extends CProducto {
 		return "CRopa [CProducto()=" + super.toString() + "\n"
 					+ "Talla=" + iTalla + "]";
 	} //toString()
-	
-	public double calcularPrecioFinal() {
-		if (LocalDate.getDayOfMonth() >= 15) {  //Alternativa: if (iDiaDelMes >= 15), instanciar LocalDate.getDayOfMonth() dentro de una variable iDiaDelMes 
-			return this.dPrecio + ((10/100) * this.dPrecio);
+
+	public void calcularPrecioFinal() {
+            LocalDate fechaActual = LocalDate.now();
+		if (fechaActual.getDayOfMonth() >= 15) {  //Alternativa: if (iDiaDelMes >= 15), instanciar LocalDate.getDayOfMonth() dentro de una variable iDiaDelMes 
+			 this.dPrecio += ((10/100) * this.dPrecio);
 		} else {
-			return this.dPrecio + ((this.iIVA/100) * this.dPrecio);
+			 this.dPrecio += ((this.iIVA/100) * this.dPrecio);
 		}
 	} //calcularPrecioFinal()
 }
